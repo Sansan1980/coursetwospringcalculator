@@ -46,11 +46,11 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     public String numDivide(Double num1, Double num2) {
-        if (num1 != null && num2 != null && num2 ==0) {// непойму почему непроверяется на null Пробовал и через != тоже ничего невыводит.
-            return "Введите коректные значения!!";
+        if (num1 != null && num2 != null && num2 !=0) {// непойму почему непроверяется на null Пробовал и через != тоже ничего невыводит.
+            double num3 = num1 / num2;
+            return num1 + "/" + num2 + "=" + num3;
         }
-        double num3 = num1 / num2;
-        return num1 + "/" + num2 + "=" + num3;
+        return "Введите коректные значения!!";
     }
 
     public String count() {

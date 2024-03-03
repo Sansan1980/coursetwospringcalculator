@@ -20,29 +20,29 @@ public class CalculatorController {
     }
 
     @GetMapping("/calculator/plus")
-    public String pumSumm(@RequestParam("num1") Integer pum1, @RequestParam("num2") Integer pum2) {
+    public String pumSumm(@RequestParam(value = "num1",required = false ) Integer pum1, @RequestParam( value = "num2",required = false) Integer pum2) {
         return calculatorService.numSumm(pum1, pum2);
     }
 
     @GetMapping("/calculator/minus")
-    public String pumMinus(@RequestParam("num1") Integer pum1, @RequestParam("num2") Integer pum2) {
+    public String pumMinus(@RequestParam(value = "num1",required = false ) Integer pum1, @RequestParam( value = "num2",required = false) Integer pum2) {
         return calculatorService.numMinus(pum1, pum2);
     }
 
     @GetMapping("/calculator/multiply")
-    public String pumMultiply(@RequestParam("num1") Integer pum1, @RequestParam("num2") Integer pum2) {
+    public String pumMultiply(@RequestParam(value = "num1",required = false ) Integer pum1, @RequestParam( value = "num2",required = false) Integer pum2) {
         return calculatorService.numMultiply(pum1, pum2);
     }
 
     @GetMapping("/calculator/divide")
-    public String pumDivide(@RequestParam("num1") Double pum1, @RequestParam("num2") Double pum2) {
+    public String pumDivide(@RequestParam(value = "num1",required = false ) Double pum1, @RequestParam( value = "num2",required = false) Double pum2) {
         return calculatorService.numDivide(pum1, pum2);
     }
 
     @GetMapping("/counter")
     public String count() {
         calculatorService.countdown();
-        return "Количество запросов: " + calculatorService.getCount();
+        return "Колличество запросов: " + calculatorService.getCount();
     }
 
 }
